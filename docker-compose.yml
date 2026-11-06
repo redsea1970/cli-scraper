@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  scraper:
+    build: .
+    volumes:
+      - ./data:/app/data
+    command: ["--url", "https://www.python.org", "--db", "data/headings.db"]
