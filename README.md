@@ -1,22 +1,31 @@
-# CLI Scraper
+# CLI Scraper + CI/CD
 
-CLI-утилита для парсинга заголовков с сайта и сохранения в SQLite.
+Консольная утилита для парсинга HTML-заголовков с сайтов, написанная на Python.
 
-## Что делает
-- Принимает URL через аргументы командной строки (`argparse`).
-- Парсит заголовки (`<h1>`, `<h2>`, `<h3>`) с помощью `requests` + `BeautifulSoup`.
-- Сохраняет в SQLite (таблица `headings`).
-- Выводит статистику: сколько заголовков каждого уровня.
-- Логирует действия в консоль и файл (`logging`).
+## 🚀 Возможности
+- Парсинг заголовков (h1-h6) с любой веб-страницы.
+- Сохранение результатов в файл.
+- Покрытие тестами (pytest).
+- Автоматический запуск тестов через GitHub Actions (CI).
 
-## Стек
+## 🛠 Технологии
 - Python 3.12
-- argparse, logging, sqlite3 (встроены)
-- requests, beautifulsoup4
+- BeautifulSoup4, Requests (парсинг)
+- Pytest (тестирование)
+- Docker & Docker Compose (контейнеризация)
+- GitHub Actions (CI/CD)
 
-## Как запустить
-    pip install -r requirements.txt
-    python src/scraper.py --url https://example.com --db data/headings.db
+## 📦 Установка и запуск
+```bash
+# Клонировать репозиторий
+git clone https://github.com/redsea1970/cli-scraper.git
 
-## Автор
-itpso
+# Создать виртуальное окружение
+python -m venv .venv
+source .venv/bin/activate  # для Linux/Mac
+
+# Установить зависимости
+pip install -r requirements.txt
+
+# Запустить парсер
+python src/scraper.py
