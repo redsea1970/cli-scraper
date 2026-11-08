@@ -29,3 +29,22 @@ pip install -r requirements.txt
 
 # Запустить парсер
 python src/scraper.py
+
+## ✅ Локальная проверка (как в CI)
+```bash
+pip install pytest ruff
+ruff check .
+pytest tests/ -v
+```
+
+## 🔁 CI/CD
+При каждом push/PR в `main` GitHub Actions выполняет:
+1. **lint** — `ruff check .`
+2. **test** — `pytest tests/ -v` (3 теста на `parse_headings`)
+
+Job `test` запускается только после успешного `lint` (`needs: lint`).
+
+## 🐳 Docker
+```bash
+docker compose up --build
+```
