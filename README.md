@@ -1,3 +1,4 @@
+![CI](https://github.com/redsea1970/cli-scraper/actions/workflows/ci.yml/badge.svg)
 # CLI Scraper + CI/CD
 
 Консольная утилита для парсинга HTML-заголовков с сайтов, написанная на Python.
